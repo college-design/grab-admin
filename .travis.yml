@@ -7,7 +7,7 @@ jdk:
 branches:
   only:
     - master
-script
+script:
     - mvn install -DskipTests=true
 #notifications:
 #  email:
