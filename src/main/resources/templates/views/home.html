@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8" />
-    <div th:include="temp/template :: common"/>
-    <title>grab-admin</title>
-</head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!--    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <title th:text="${title}">grab-admin</title>
+        <meta name="description" content=""/>
+        <meta name="keywords" content="index"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="renderer" content="webkit"/>
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link th:href="@{/css/style.css}" type="text/css"/>
+        <script th:src="@{/js/home.js}" type="javascript"/>
+    </head>-->
 <body>
     <h1 id="title">Grab Admin Server</h1>
     <h4 th:text="${list}">Grab Admin Server</h4>
-    <div th:include="temp/template :: footer"/>
+    <div th:include="common/template :: footer"/>
 </body>
 </html>
