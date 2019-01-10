@@ -1,0 +1,15 @@
+---
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+# 限制项目分支
+branches:
+  only:
+    - master
+#notifications:
+#  email:
+#    recipients:
+#        - 1453860636@qq.com
+#    on_success: change
+#    on_failure: always
