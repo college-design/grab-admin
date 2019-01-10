@@ -25,6 +25,6 @@ public class HomeController {
         List<WebSite> list = iWebSiteService.getAllWebSiteList();
         logger.info("/home/index:{}",list.size());
         map.addAttribute("list",list.size());
-        return "home";
+        return "views/home";
     }
 }
