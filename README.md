@@ -12,3 +12,4 @@
 - Java
 - SpringBoot2.x
 - Maven
+- thymeleaf
