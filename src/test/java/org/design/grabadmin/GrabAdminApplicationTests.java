@@ -1,6 +1,10 @@
 package org.design.grabadmin;
 
+import org.design.grabadmin.dao.GrabRuleDao;
+import org.design.grabadmin.dao.MatchDataDao;
 import org.design.grabadmin.dao.WebSiteDao;
+import org.design.grabadmin.entity.GrabRule;
+import org.design.grabadmin.entity.MatchData;
 import org.design.grabadmin.entity.WebSite;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,6 +25,12 @@ public class GrabAdminApplicationTests {
     @Autowired
     private WebSiteDao webSiteDao;
 
+    @Autowired
+    private GrabRuleDao grabRuleDao;
+
+    @Autowired
+    private MatchDataDao matchDataDao;
+
     @Test
     public void contextLoads() {
     }
@@ -30,10 +40,28 @@ public class GrabAdminApplicationTests {
         WebSite webSite = new WebSite();
         webSite.setUrl("www.baidu.com");
         webSite.setDescription("百度");
+        webSite.setStatus(1);
         webSiteDao.save(webSite);
+        List<WebSite> webList = webSiteDao.findAll();
+        logger.error("webList:{}",webList.size());
 
-        List<WebSite> list = webSiteDao.findAll();
-        logger.info("list:{}",list.size());
+        GrabRule grabRule = new GrabRule();
+        grabRule.setRule("href=\"(http://.*?)\"");
+        grabRule.setStatus(1);
+        grabRule.setWebSite(webSite);
+        grabRule.setDescription("rule test");
+        grabRuleDao.save(grabRule);
+        List<GrabRule> ruleList = grabRuleDao.findAll();
+        logger.error("ruleList:{}",ruleList.size());
+    }
+
+    @Test
+    public void testGrabRule(){
+        GrabRule grabRule = new GrabRule();
+        grabRule.setRule("href=\"(http://.*?)\"");
+        grabRule.setStatus(1);
+//        grabRule.setWebSite();
+
     }
 }
 

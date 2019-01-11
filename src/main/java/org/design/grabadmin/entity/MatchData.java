@@ -8,12 +8,16 @@ public class MatchData {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    @Column(nullable = false)
-    private Integer webSiteId;
-    @Column(nullable = false)
-    private Integer grabRuleId;
+
     @Column(nullable = false)
     private String data;
+
+    @Column(nullable = false)
+    private Integer grabRuleId;
+
+//    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional=false)
+//    @JoinColumn(name="grab_rule_id")
+//    private GrabRule grabRule;
 
     public MatchData() {
     }
@@ -26,12 +30,12 @@ public class MatchData {
         this.id = id;
     }
 
-    public Integer getWebSiteId() {
-        return webSiteId;
+    public String getData() {
+        return data;
     }
 
-    public void setWebSiteId(Integer webSiteId) {
-        this.webSiteId = webSiteId;
+    public void setData(String data) {
+        this.data = data;
     }
 
     public Integer getGrabRuleId() {
@@ -42,11 +46,11 @@ public class MatchData {
         this.grabRuleId = grabRuleId;
     }
 
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
+    //    public GrabRule getGrabRule() {
+//        return grabRule;
+//    }
+//
+//    public void setGrabRule(GrabRule grabRule) {
+//        this.grabRule = grabRule;
+//    }
 }
