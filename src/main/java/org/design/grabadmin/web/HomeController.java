@@ -27,4 +27,9 @@ public class HomeController {
         map.addAttribute("list",list.size());
         return "views/home";
     }
+
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public String test(ModelMap map){
+        return "views/test";
+    }
 }

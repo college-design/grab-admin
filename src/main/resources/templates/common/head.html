@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="common-head(title)">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1.0, width=device-width, user-scalable=no" />
+        <title th:utext="${title}">test</title>
+        <link th:href="@{/css/style.css}" rel="stylesheet">
+        <script th:src="@{/js/home.js}"></script>
+        <!--<link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon">-->
+        <link th:href="@{/plugins/bootstrap-4.2.1-dist/css/bootstrap.css}" rel="stylesheet">
+        <link th:href="@{/plugins/bootstrap-4.2.1-dist/css/bootstrap-grid.css}" rel="stylesheet">
+        <link th:href="@{/plugins/bootstrap-4.2.1-dist/css/bootstrap-reboot.css}" rel="stylesheet">
+        <script th:src="@{/plugins/jquery-2.1.4/jquery.js}"></script>
+        <script th:src="@{/plugins/bootstrap-4.2.1-dist/js/bootstrap.bundle.js}"></script>
+        <script th:src="@{/plugins/bootstrap-4.2.1-dist/js/bootstrap.js}"></script>
+    </head>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common/head :: common-head('Grab Admin')}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+</head>
+<body>
+<div>
+    <header th:replace="~{common/template :: common-header(activeUrl='test')}"></header>
+    <!--<div th:replace="common/template :: nav-1"/>-->
+    <div th:replace="common/template :: div-container"/>
+    <footer th:replace="common/template :: copy"/>
+</div>
+</body>
+</html>
