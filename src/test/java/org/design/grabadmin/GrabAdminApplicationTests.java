@@ -38,8 +38,8 @@ public class GrabAdminApplicationTests {
     @Test
     public void testWebSiteDao(){
         WebSite webSite = new WebSite();
-        webSite.setUrl("www.baidu.com");
-        webSite.setDescription("百度");
+        webSite.setUrl("http://www.baidu.com");
+        webSite.setDescription("baidu");
         webSite.setStatus(1);
         webSiteDao.save(webSite);
         List<WebSite> webList = webSiteDao.findAll();
