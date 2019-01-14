@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="~{common/head :: common-head('Home')}">
+<head th:replace="~{common/head :: common-head('Data Test')}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
 </head>
 <body>
 <div class="container">
+    <h1 id="title">Data</h1>
     <div>
-        <h1 id="title">Grab Admin Server</h1>
-    </div>
-    <div>
-        <div th:replace="common/template :: data-link"/>
+        <div th:replace="common/data :: web-site-data"/>
     </div>
 </div>
 <div th:replace="common/template :: copy"/>

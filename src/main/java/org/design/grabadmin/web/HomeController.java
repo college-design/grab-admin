@@ -24,12 +24,7 @@ public class HomeController {
     public String index(ModelMap map){
         List<WebSite> list = iWebSiteService.getAllWebSiteList();
         logger.info("/home/index:{}",list.size());
-        map.addAttribute("list",list.size());
+//        map.addAttribute("list",list.size());
         return "views/home";
-    }
-
-    @RequestMapping(value = "/test",method = RequestMethod.GET)
-    public String test(ModelMap map){
-        return "views/test";
     }
 }

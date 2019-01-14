@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="web-site-data">
+        <div>
+            <span>网站站点</span>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>地址</th>
+                    <th>描述</th>
+                    <th>规则列表</th>
+                    <th>状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="item : ${webSiteList}">
+                    <td th:text="${item.id}">0</td>
+                    <td th:text="${item.url}">https://wwww.baidu.com</td>
+                    <td th:text="${item.description}">规则</td>
+                    <td>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>规则</th>
+                                    <th>描述</th>
+                                    <th>状态</th>
+                                </tr>
+                            </thead>
+                            <tr th:each="t : ${item.grabRuleList}">
+                                <td th:text="${t.id}">0</td>
+                                <td th:text="${t.rule}">规则</td>
+                                <td th:text="${t.description}">描述</td>
+                                <td th:text="${t.status==0?'关闭':'开启'}">开启</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td th:text="${item.status==0?'关闭':'开启'}">开启</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</html>
