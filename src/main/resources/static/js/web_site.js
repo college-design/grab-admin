@@ -78,6 +78,10 @@ var TableInit = function () {
     return oTableInit;
 };
 
+//点击取消后清空表单中已写信息
+function resetAddModal(){
+    document.getElementById("addWebSiteForm").reset();
+}
 
 var ButtonInit = function () {
     var oInit = new Object();
