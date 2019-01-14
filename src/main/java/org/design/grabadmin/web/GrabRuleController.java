@@ -1,8 +1,8 @@
 package org.design.grabadmin.web;
 
 import com.alibaba.fastjson.JSON;
-import org.design.grabadmin.entity.WebSite;
-import org.design.grabadmin.service.IWebSiteService;
+import org.design.grabadmin.entity.GrabRule;
+import org.design.grabadmin.service.IGrabRuleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,23 +15,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/webSite")
-public class WebSiteController {
-    private final static Logger logger = LoggerFactory.getLogger(WebSiteController.class);
+@RequestMapping("/grabRule")
+public class GrabRuleController {
+
+    private final static Logger logger = LoggerFactory.getLogger(GrabRuleController.class);
 
     @Autowired
-    private IWebSiteService iWebSiteService;
+    private IGrabRuleService iGrabRuleService;
 
     @RequestMapping("/")
     public String index(){
-        return "views/web_site";
+        return "views/grab_rule";
     }
 
     @ResponseBody
     @RequestMapping(value = "/listTable",method = RequestMethod.GET)
-    public String queryWebSiteList(WebSite webSite,ModelMap map){
-        logger.error("request:{}",JSON.toJSON(webSite));
-        List<WebSite> list = iWebSiteService.getAllWebSiteList();
+    public String queryGrabRuleList(GrabRule grabRule, ModelMap map){
+        logger.error("request:{}", JSON.toJSON(grabRule));
+        List<GrabRule> list = iGrabRuleService.getAllGrabRuleList();
         String result = JSON.toJSONString(list);
         map.addAttribute("response:{}",result);
         return result;

@@ -1,8 +1,8 @@
 package org.design.grabadmin.web;
 
 import com.alibaba.fastjson.JSON;
-import org.design.grabadmin.entity.WebSite;
-import org.design.grabadmin.service.IWebSiteService;
+import org.design.grabadmin.entity.MatchData;
+import org.design.grabadmin.service.IMatchDataService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,23 +15,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/webSite")
-public class WebSiteController {
-    private final static Logger logger = LoggerFactory.getLogger(WebSiteController.class);
+@RequestMapping("/matchData")
+public class MatchDataController {
+    private final static Logger logger = LoggerFactory.getLogger(GrabRuleController.class);
 
     @Autowired
-    private IWebSiteService iWebSiteService;
+    private IMatchDataService iMatchDataService;
 
     @RequestMapping("/")
     public String index(){
-        return "views/web_site";
+        return "views/match_data";
     }
 
     @ResponseBody
     @RequestMapping(value = "/listTable",method = RequestMethod.GET)
-    public String queryWebSiteList(WebSite webSite,ModelMap map){
-        logger.error("request:{}",JSON.toJSON(webSite));
-        List<WebSite> list = iWebSiteService.getAllWebSiteList();
+    public String queryMatchDataList(MatchData matchData, ModelMap map){
+        logger.error("request:{}", JSON.toJSON(matchData));
+        List<MatchData> list = iMatchDataService.getAllMatchDataList();
         String result = JSON.toJSONString(list);
         map.addAttribute("response:{}",result);
         return result;

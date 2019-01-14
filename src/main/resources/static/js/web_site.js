@@ -12,7 +12,7 @@ var TableInit = function () {
     var oTableInit = new Object();
     //初始化Table
     oTableInit.Init = function () {
-        $('#tb_departments').bootstrapTable({
+        $('#tb_web_site').bootstrapTable({
             url: '/grab-admin/webSite/listTable',         //请求后台的URL（*）
             method: 'get',                      //请求方式（*）
             toolbar: '#toolbar',                //工具按钮用哪个容器
@@ -70,8 +70,8 @@ var TableInit = function () {
         var temp = {   //这里的键的名字和控制器的变量名必须一直，这边改动，控制器也需要改成一样的
             limit: params.limit,   //页面大小
             offset: params.offset,  //页码
-            url: $("#txt_search_url").val(),
-            status: $("#txt_search_statu").val()
+            url: $("#txt_search_site_url").val(),
+            status: $("#txt_search_site_status").val()
         };
         return temp;
     };
